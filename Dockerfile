@@ -8,6 +8,7 @@ RUN apk update \
     && cd app \
     && go build github.com/gogap/go-pandoc \
     && cp -r $(go env GOPATH)/src/github.com/gogap/go-pandoc/templates . \
+    && cp -r $(go env GOPATH)/src/github.com/gogap/go-pandoc/data . \
     && cp $(go env GOPATH)/src/github.com/gogap/go-pandoc/app.conf . \
     && rm -rf $(go env GOPATH) \
     && apk del .fetch-deps
